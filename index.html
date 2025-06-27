@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharath - Graphic Designer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Sharath</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Creative Graphic Designer</h1>
+                <p class="hero-subtitle">Transforming ideas into compelling visual experiences</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Comming Soon.jpg" alt="Profile Image" class="profile-img" id="profileImg">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-intro">
+                        <span class="about-greeting">This is</span>
+                        <h3 class="about-name">Sharath Nallanagula</h3>
+                        <ul class="about-roles">
+                            <li>Visualizer</li>
+                            <li>Sr. Graphic Designer</li>
+                            <li>Artist</li>
+                            <li>Interior Designer</li>
+                            <li>Miniature Model Maker</li>
+                        </ul>
+                    </div>
+                    <p>I'm a passionate graphic designer with over 5 years of experience creating impactful visual solutions. My work spans across branding, digital design, print media, and user experience design.</p>
+                    <p>I believe in the power of thoughtful design to communicate ideas effectively and create meaningful connections between brands and their audiences.</p>
+                    <div class="skills">
+                        <h3>Skills & Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Adobe Creative Suite</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Sketch</span>
+                            <span class="skill-tag">Branding</span>
+                            <span class="skill-tag">UI/UX Design</span>
+                            <span class="skill-tag">Typography</span>
+                            <span class="skill-tag">Illustration</span>
+                            <span class="skill-tag">Print Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>30+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>5+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="branding">Branding</button>
+                <button class="filter-btn" data-filter="digital">Digital</button>
+                <button class="filter-btn" data-filter="print">Print</button>
+                <button class="filter-btn" data-filter="ui">UI/UX</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="branding">
+                    <div class="portfolio-image">
+                        <img src="Comming Soon.jpg" alt="Brand Identity Project">
+                        <div class="portfolio-overlay">
+                            <h3>Brand Identity Design</h3>
+                            <p>Complete brand identity for tech startup</p>
+                            <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="digital">
+                    <div class="portfolio-image">
+                        <img src="Comming Soon.jpg" alt="Digital Campaign">
+                        <div class="portfolio-overlay">
+                            <h3>Digital Marketing Campaign</h3>
+                            <p>Social media campaign for fashion brand</p>
+                            <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="ui">
+                    <div class="portfolio-image">
+                        <img src="Comming Soon.jpg" alt="Mobile App UI">
+                        <div class="portfolio-overlay">
+                            <h3>Mobile App Interface</h3>
+                            <p>UX/UI design for fitness app</p>
+                            <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="print">
+                    <div class="portfolio-image">
+                        <img src="Comming Soon.jpg" alt="Print Design">
+                        <div class="portfolio-overlay">
+                            <h3>Print Marketing Materials</h3>
+                            <p>Brochures and business cards</p>
+                            <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="branding">
+                    <div class="portfolio-image">
+                        <img src="Comming Soon.jpg" alt="Logo Design">
+                        <div class="portfolio-overlay">
+                            <h3>Logo Design Collection</h3>
+                            <p>Various logo designs for different industries</p>
+                            <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="digital">
+                    <div class="portfolio-image">
+                        <img src="Comming Soon.jpg" alt="Web Design">
+                        <div class="portfolio-overlay">
+                            <h3>Website Design</h3>
+                            <p>Modern website for restaurant chain</p>
+                            <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Brand Identity</h3>
+                    <p>Complete brand identity packages including logos, color palettes, typography, and brand guidelines.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Digital Design</h3>
+                    <p>Social media graphics, web banners, email templates, and digital marketing materials.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3>Print Design</h3>
+                    <p>Business cards, brochures, flyers, posters, and other print materials.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>User interface and user experience design for websites and mobile applications.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Illustration</h3>
+                    <p>Custom illustrations and graphics for various projects and applications.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Photo Editing</h3>
+                    <p>Professional photo editing, retouching, and manipulation services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-content">
+                <div class="exp-header">
+                    <span class="exp-employed">EMPLOYED</span>
+                    <h3 class="exp-title">Sr. Visual Designer &amp; Sr. Graphic Designer</h3>
+                    <p class="exp-company">Currently working at Sravya Grafics and my core skills are to design and develop:</p>
+                </div>
+                <div class="exp-skills">
+                    <ul class="exp-list">
+                        <li>Corporate Logo Designing</li>
+                        <li>Packaging Works</li>
+                        <li>International Event Designing</li>
+                        <li>Stall Designs</li>
+                        <li>Hoardings</li>
+                        <li>Standies</li>
+                        <li>Publicity Designing</li>
+                        <li>Catalogues</li>
+                        <li>Corporate Brochures</li>
+                        <li>Books</li>
+                        <li>Magazines</li>
+                    </ul>
+                    <ul class="exp-list">
+                        <li>Business Reports</li>
+                        <li>Corporate Reports</li>
+                        <li>Annual Reports</li>
+                        <li>Advertisements</li>
+                        <li>Banners</li>
+                        <li>Invitation Cards</li>
+                        <li>Wedding Cards</li>
+                        <li>Photo Editing</li>
+                        <li>Graphic Painting</li>
+                        <li>Film Event Designs</li>
+                        <li>Posters</li>
+                    </ul>
+                </div>
+                <div class="exp-stationery">
+                    <h4>Corporate Stationery</h4>
+                    <ul class="exp-list-inline">
+                        <li>Business Cards</li>
+                        <li>Letterheads</li>
+                        <li>Envelopes</li>
+                        <li>House Journals</li>
+                        <li>News Letters</li>
+                        <li>Souvenirs</li>
+                    </ul>
+                </div>
+                <div class="exp-software">
+                    <h4>Design Software Skills in...</h4>
+                    <p>Adobe Photoshop, Coral Draw, InDesign, Illustrator, QuarkXPress, Free Hand, Power Point, Microsoft Word, Excel</p>
+                </div>
+                <div class="exp-description">
+                    <p>Scanning high quality jobs and getting best results on ICG Drum Scanner, Sitex Flatbed Scanner. Disk processing using Photoshop, Quark X Press, Coral Draw. Retouching the B&amp;W photo to improve the color image. Retouching the poorer quality images, color correction and achieving better results. Quality checking as per instruction. Handling the in-house staff and customer queries. Art &amp; Crafts like Canvas Painting, Water Painting, Thermocol Cutting, Mouldings with POP.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">ACHIEVEMENTS</h2>
+            <div class="achievements-list">
+                <div class="achievement-item">
+                    <span class="achieve-icon">🏆</span>
+                    <span>National Award winning (III Place) of Nutrin Chocolate Company (Drawing Competition 1989)</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achieve-icon">🥇</span>
+                    <span>Distict Level Drawing Competition 1st Prize (1990)</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achieve-icon">🏅</span>
+                    <span>Best Logo Design Award &amp; Reward from <b>Mahatma Gandhi University, Nalgonda</b></span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achieve-icon">🎨</span>
+                    <span>Gave model Design for Khairatabad Lord Maha Ganapathi Idol, Hyderabad in 2012</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achieve-icon">🎬</span>
+                    <span>Best Film Event Designing Award from Laya Tarangini Cultural Organization Telugu Films Event Awards: Nuvvu Vastanante Nevvaddatana–2005 with <b>Prabu Deva, Trisha and Siddartha</b>, Happy Days–2006 with <b>Director Shekar Kammula</b>, Samanyudu–2007 with Hero <b>Jagapathi Babu</b>, Pilla Zamindar–2012 with <b>Hero Nani</b></span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achieve-icon">🏆</span>
+                    <span>Best Title Design Award of Public Relation Voice (2004)</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achieve-icon">🏆</span>
+                    <span>Best Title Design Award &amp; Reward of Public Relation Voice (2006)</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achieve-icon">🏆</span>
+                    <span>Best Title Design Reward of Public Relation Voice (2008)</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achieve-icon">🏅</span>
+                    <span>Best Memento Design Award of SLN Bank, Bhuvanagiri, Nalgonda. (2010)</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achieve-icon">🏅</span>
+                    <span>Received PRSI National Award for Best Diary &amp; Calendar Design from Minister for Major Irrigation, Govt. of Telangana, <b>Sri T. Harish Rao, &amp; Sri K.V. Ramana Chary, IAS (Retd.)</b> Feb 2016 on the occasion of 1st Telangana State PR Conference.</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achieve-icon">🎨</span>
+                    <span>Gave model Design for Khairatabad Lord Maha Ganapathi Idol, Hyderabad in 2022</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Work Together</h3>
+                    <p>Ready to bring your ideas to life? I'd love to hear about your project and discuss how we can create something amazing together.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@sharathdesign.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>New York, NY</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Sharath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Profile Image Popup Modal -->
+    <div id="profileModal" class="profile-modal">
+        <span class="close-modal" id="closeProfileModal">&times;</span>
+        <img class="modal-content" id="modalProfileImg" src="Comming Soon.jpg" alt="Profile Full Image">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
