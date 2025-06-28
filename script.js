@@ -428,4 +428,20 @@ window.addEventListener('scroll', () => {
 });
 backToTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-}); 
+});
+
+// Phone number click: WhatsApp on web, call on mobile
+const contactPhone = document.getElementById('contactPhone');
+if (contactPhone) {
+    contactPhone.addEventListener('click', function(e) {
+        e.preventDefault();
+        const phoneLocal = '8500580811';
+        const phoneIntl = '918500580811'; // India country code
+        const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+        if (isMobile) {
+            window.location.href = `tel:${phoneLocal}`;
+        } else {
+            window.open(`https://wa.me/${phoneIntl}`, '_blank');
+        }
+    });
+} 
