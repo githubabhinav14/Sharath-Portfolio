@@ -13,7 +13,7 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
-// Portfolio Filtering
+// Portfolio Filtering with Enhanced Animations
 const filterButtons = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 
@@ -26,16 +26,105 @@ filterButtons.forEach(button => {
         
         const filterValue = button.getAttribute('data-filter');
         
+        // Add fade out animation to all items
         portfolioItems.forEach(item => {
-            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                item.style.display = 'block';
-                item.style.animation = 'fadeInUp 0.5s ease-out';
-            } else {
-                item.style.display = 'none';
-            }
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.8) translateY(20px)';
+            item.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
         });
+        
+        // After fade out, filter and fade in
+        setTimeout(() => {
+            portfolioItems.forEach((item, index) => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                    // Stagger the fade in animation
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1) translateY(0)';
+                    }, index * 100);
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }, 400);
     });
 });
+
+// Enhanced Portfolio Item Hover Effects
+portfolioItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        // Add subtle glow effect
+        item.style.boxShadow = '0 25px 50px rgba(0, 52, 120, 0.2)';
+    });
+    
+    item.addEventListener('mouseleave', () => {
+        // Remove glow effect
+        item.style.boxShadow = '0 8px 30px rgba(0, 52, 120, 0.1)';
+    });
+});
+
+// Portfolio Image Loading Animation
+const portfolioImages = document.querySelectorAll('.portfolio-image img');
+portfolioImages.forEach(img => {
+    img.addEventListener('load', () => {
+        img.style.opacity = '0';
+        img.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+            img.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            img.style.opacity = '1';
+            img.style.transform = 'scale(1)';
+        }, 100);
+    });
+});
+
+// Portfolio Filter Button Ripple Effect
+filterButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+    });
+});
+
+// Add CSS for ripple effect
+const style = document.createElement('style');
+style.textContent = `
+    .filter-btn {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple-animation 0.6s linear;
+        pointer-events: none;
+    }
+    
+    @keyframes ripple-animation {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -246,4 +335,97 @@ if (profileImg && profileModal && closeProfileModal && modalProfileImg) {
             profileModal.style.display = 'none';
         }
     };
-} 
+}
+
+// Portfolio Counter Animation
+function animatePortfolioCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60fps
+        let current = 0;
+        
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                counter.textContent = Math.floor(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target;
+            }
+        };
+        
+        updateCounter();
+    });
+}
+
+// Trigger portfolio counter animation when portfolio section is visible
+const portfolioObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animatePortfolioCounters();
+            portfolioObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+// Observe portfolio section
+document.addEventListener('DOMContentLoaded', () => {
+    const portfolioSection = document.querySelector('.portfolio');
+    if (portfolioSection) {
+        portfolioObserver.observe(portfolioSection);
+    }
+});
+
+// Section Reveal Animations
+const revealSections = document.querySelectorAll('section');
+const revealOptions = { threshold: 0.15 };
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('section-visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, revealOptions);
+revealSections.forEach(section => {
+    section.classList.add('section-hidden');
+    revealObserver.observe(section);
+});
+
+// Scrollspy Navigation Highlight
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = Array.from(document.querySelectorAll('section'));
+window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollY = window.scrollY + 120;
+    sections.forEach(section => {
+        if (scrollY >= section.offsetTop) {
+            current = section.getAttribute('id');
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Back-to-Top Button
+const backToTopBtn = document.createElement('button');
+backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+backToTopBtn.className = 'back-to-top';
+document.body.appendChild(backToTopBtn);
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}); 
