@@ -444,4 +444,68 @@ if (contactPhone) {
             window.open(`https://wa.me/${phoneIntl}`, '_blank');
         }
     });
-} 
+}
+
+// Mobile Sidebar Navigation
+const mobileSidebar = document.getElementById('mobileSidebar');
+const mobileSidebarOverlay = document.getElementById('mobileSidebarOverlay');
+const sidebarClose = document.getElementById('sidebarClose');
+const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+// Open sidebar
+function openSidebar() {
+    mobileSidebar.classList.add('active');
+    mobileSidebarOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Close sidebar
+function closeSidebar() {
+    mobileSidebar.classList.remove('active');
+    mobileSidebarOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Event listeners
+hamburger.addEventListener('click', openSidebar);
+sidebarClose.addEventListener('click', closeSidebar);
+mobileSidebarOverlay.addEventListener('click', closeSidebar);
+
+// Close sidebar when clicking on a link
+sidebarLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        closeSidebar();
+        
+        // Update active state
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+    });
+});
+
+// Update sidebar active state based on scroll position
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY + 120;
+    const sections = Array.from(document.querySelectorAll('section'));
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+});
+
+// Close sidebar on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileSidebar.classList.contains('active')) {
+        closeSidebar();
+    }
+}); 
